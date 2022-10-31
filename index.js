@@ -42,7 +42,7 @@ app.post('/api/employees', (req, res)=> {
 
 // http://localhost:8000/api/employees/Bob
 app.get('/api/employees/:name', (req, res)=> {
-    if(getEmployeesByName(req.body).code){
+    if(getEmployeesByName(req.params.name).code){
         res.status(404).json(getEmployeesByName(req.params.name));
     }
     res.json(getEmployeesByName(req.params.name));
